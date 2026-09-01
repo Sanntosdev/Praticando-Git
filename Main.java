@@ -8,6 +8,14 @@ public class Main {
         p1.classe = "Pirata";
         p1.poder = "Borracha";
 
+        Personagem p2 = new Personagem();
+        p2.nome = "Musashi";
+        p2.idade = 17;
+        p2.classe = "Espadachim";
+        p2.poder = "Sabedoria";
+
+        p1.imprime();
+        p2.imprime();
 
     }
 }
