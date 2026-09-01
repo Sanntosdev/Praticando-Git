@@ -10,6 +10,7 @@ public class Main {
         System.out.println("1 - P1");
         System.out.println("2 - P2");
         System.out.println("3 - P3");
+        System.out.println("4 - P4");
         System.out.print("Escolha : ");
         int resp1 = entrada.nextInt();
         System.out.println("--------------");
@@ -41,6 +42,12 @@ public class Main {
         p3.classe = "Monarca";
         p3.poder = "Necromancia";
 
+        Personagem p4 = new Personagem();
+        p4.nome = "Gon";
+        p4.idade = 12;
+        p4.classe = "Caçador";
+        p4.poder = "Técnica de Caça";
+
         do {
 
             switch (resp()){
@@ -54,7 +61,9 @@ public class Main {
                 case 3 :
                     p3.imprime();
                     break;
-
+                case 4 :
+                    p4.imprime();
+                    break;
 
 
             }
@@ -65,9 +74,51 @@ public class Main {
         }while (resp.equalsIgnoreCase("Sim"));
 
 
+        String [] armas = {"Espada",  "Adaga", "Machado", "Lança" , "Bastão"};
+        for (int i = 0; i < armas.length; i++){
+
+            System.out.println(armas[i]);
+        }
+        System.out.println("---------------------");
+
+        System.out.println("Escolha uma arma : " );
+
+        System.out.println("1 - A1");
+        System.out.println("2 - A2");
+        System.out.println("3 - A3");
+        System.out.println("4 - A4");
+        System.out.print("Escolha : ");
+        
+        String leitor = entrada.nextLine();
+
+        do {
+
+            switch (leitor){
+
+                case "1" :
+                    System.out.println("Você escolheu a arma : " + armas[0]);
+                    break;
+                case "2" :
+                    System.out.println("Você escolheu a arma : " + armas[1]);
+                    break;
+                case "3" :
+                    System.out.println("Você escolheu a arma : " + armas[2]);
+                    break;
+                case "4" :
+                    System.out.println("Você escolheu a arma : " + armas[3]);
+                    break;
+                case "5" :
+                    System.out.println("Você escolheu a arma : " + armas[4]);
+                    break;
+
+            }
+
+            System.out.print("Deseja escolher mais alguma arma : ");
+            leitor = entrada.nextLine();
+        
 
 
-
+}while (leitor.equalsIgnoreCase("Sim"));
 
     }
 }
