@@ -1,8 +1,9 @@
 import java.util.Scanner;
 
+
 public class Main {
 
-    static int  resp(){
+    static int escolhardepersonagem() {
 
         Scanner entrada = new Scanner(System.in);
 
@@ -19,12 +20,33 @@ public class Main {
 
 
     }
+
+    static int escolhardearma(){
+
+        Scanner entrada = new Scanner(System.in);
+
+        System.out.println("Qual arma vc quer ver");
+        System.out.println("1 - A1");
+        System.out.println("2 - A2");
+        System.out.println("3 - A3");
+        System.out.println("4 - A4");
+        System.out.println("5 - A5");
+        System.out.print("Escolha : ");
+        int resp = entrada.nextInt();
+        System.out.println("--------------");
+
+        return resp;
+
+
+    }
+
     public static void main(String[] args) {
 
-        Personagem p1 = new Personagem();
         String resp = "";
         Scanner entrada = new Scanner(System.in);
 
+
+        Personagem p1 = new Personagem();
         p1.nome = "Luffy";
         p1.idade = 18;
         p1.classe = "Pirata";
@@ -50,18 +72,18 @@ public class Main {
 
         do {
 
-            switch (resp()){
+            switch (escolhardepersonagem()) {
 
-                case 1 :
+                case 1:
                     p1.imprime();
                     break;
-                case 2 :
+                case 2:
                     p2.imprime();
                     break;
-                case 3 :
+                case 3:
                     p3.imprime();
                     break;
-                case 4 :
+                case 4:
                     p4.imprime();
                     break;
 
@@ -71,43 +93,38 @@ public class Main {
             System.out.print("Deseja ver mais algum : ");
             resp = entrada.nextLine();
 
-        }while (resp.equalsIgnoreCase("Sim"));
+        } while (resp.equalsIgnoreCase("Sim"));
+
+        System.out.println("---------------------------");
 
 
-        String [] armas = {"Espada",  "Adaga", "Machado", "Lança" , "Bastão"};
-        for (int i = 0; i < armas.length; i++){
+        String[] armas = {"Espada", "Adaga", "Machado", "Lança", "Bastão"};
+        for (int i = 0; i < armas.length; i++) {
 
             System.out.println(armas[i]);
         }
         System.out.println("---------------------");
 
-        System.out.println("Escolha uma arma : " );
+       String leitor = "";
 
-        System.out.println("1 - A1");
-        System.out.println("2 - A2");
-        System.out.println("3 - A3");
-        System.out.println("4 - A4");
-        System.out.print("Escolha : ");
-        
-        String leitor = entrada.nextLine();
 
         do {
 
-            switch (leitor){
+            switch (escolhardearma()) {
 
-                case "1" :
+                case 1:
                     System.out.println("Você escolheu a arma : " + armas[0]);
                     break;
-                case "2" :
+                case 2:
                     System.out.println("Você escolheu a arma : " + armas[1]);
                     break;
-                case "3" :
+                case 3:
                     System.out.println("Você escolheu a arma : " + armas[2]);
                     break;
-                case "4" :
+                case 4:
                     System.out.println("Você escolheu a arma : " + armas[3]);
                     break;
-                case "5" :
+                case 5 :
                     System.out.println("Você escolheu a arma : " + armas[4]);
                     break;
 
@@ -115,10 +132,49 @@ public class Main {
 
             System.out.print("Deseja escolher mais alguma arma : ");
             leitor = entrada.nextLine();
-        
 
 
-}while (leitor.equalsIgnoreCase("Sim"));
+        } while (leitor.equalsIgnoreCase("Sim"));
+
+        System.out.println("----------------------------");
+        System.out.println("Agora que vc já viu a nossa escolha de personagem e armas");
+        System.out.println("Agora monte o seu");
+        System.out.println("--------------------------");
+
+        Personagem p5 = new Personagem();
+
+        System.out.print("Digite o nome : ");
+        p5.nome = entrada.nextLine();
+
+        System.out.print("Digite a idade : ");
+        p5.idade = entrada.nextInt();
+
+        System.out.print("Digite a classe : ");
+        p5.classe = entrada.nextLine();
+
+        System.out.print("Digite o poder : ");
+        p5.poder = entrada.nextLine();
+
+        System.out.println("Quer ver o menu do seu personagem");
+        String resposta = entrada.nextLine();
+
+        if(resposta.equalsIgnoreCase("Sim")){
+
+            p5.imprime();
+        }else{
+
+            System.out.println("Então procure o que fazer viu ");
+        }
+
+        //agora ver e quebre o codigo viu palhaço
+
+
+
+
+
+
+
+
 
     }
 }
